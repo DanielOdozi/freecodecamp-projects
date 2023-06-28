@@ -1,17 +1,45 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React, { useEffect } from 'react';
+import ReactDOM from 'react-dom';
+import Quote from './Random-Quote-Machine/Quote';
+import Markdown from './Markdown-Previewer/Markdown';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from './Layout';
+import 'animate.css/animate.min.css';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+function Pagetitle() {
+    useEffect(() => {
+      document.title = 'Projects';
+    }, []);
+}
+
+function MainPage(){
+    return(
+        <div>
+            <h1>Welcome to my Freecodecamp projects</h1>
+            <p>Click on the link to view projects</p>
+        </div>
+    )
+}
+function PageLink(){
+    return(
+        <BrowserRouter>
+            <Routes>
+                    <Route path="/" element={
+                        <div>
+                            <MainPage />
+                            <Layout />
+                        </div>
+                        } />
+                    <Route path="Quote" element={<Quote />} />
+                    <Route path="Markdown" element={<Markdown />}/>
+            </Routes>
+        </BrowserRouter>
+    )
+}
+ReactDOM.render(<Pagetitle />, document.getElementById("root"));
+ReactDOM.render(
+    <div>
+        <PageLink />
+    </div>, 
+    document.getElementById("root")
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

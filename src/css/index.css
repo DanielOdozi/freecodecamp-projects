@@ -1,0 +1,17 @@
+ul {
+    list-style: none;
+    padding: 0;
+}
+  
+li {
+    margin-bottom: 10px;
+}
+  
+.quote {
+    color: blue;
+    text-decoration: none;
+}
+  
+.quote:hover {
+    text-decoration: underline;
+}
