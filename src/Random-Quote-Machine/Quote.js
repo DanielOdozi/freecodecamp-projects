@@ -33,7 +33,7 @@ function Quote(){
       }, []);
     const [quote, setquote] = useState(0);
     const [fadeOut, setFadeOut] = useState(false);
-    const [texts, setTexts] = useState(shuffleArray(initialtexts));
+    const [texts, setTexts] = useState(initialtexts);
     const handleclick = () => {
         setFadeOut(true);
         setTimeout(() => {

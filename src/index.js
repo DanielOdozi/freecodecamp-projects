@@ -5,6 +5,8 @@ import Markdown from './Markdown-Previewer/Markdown';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from './Layout';
 import 'animate.css/animate.min.css';
+import Nopage from './Nopage';
+
 
 function Pagetitle() {
     useEffect(() => {
@@ -14,7 +16,7 @@ function Pagetitle() {
 
 function MainPage(){
     return(
-        <div>
+        <div className="mainpage">
             <h1>Welcome to my Freecodecamp projects</h1>
             <p>Click on the link to view projects</p>
         </div>
@@ -32,6 +34,7 @@ function PageLink(){
                         } />
                     <Route path="Quote" element={<Quote />} />
                     <Route path="Markdown" element={<Markdown />}/>
+                    <Route path="*" element={<Nopage />} />
             </Routes>
         </BrowserRouter>
     )
