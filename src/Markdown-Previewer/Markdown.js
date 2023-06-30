@@ -39,7 +39,7 @@ function Markdown(){
             )}
             {!iconchange && (
             <section className="section2">
-                <h2>Previewer<i onClick={secondicon} className={`fa-solid ${iconchangeb ? 'fa-arrows-to-circle' : 'fa-arrows-up-down-left-right'} arrow`}></i></h2>
+                <h2 className="sectionh2">Previewer<i onClick={secondicon} className={`fa-solid ${iconchangeb ? 'fa-arrows-to-circle' : 'fa-arrows-up-down-left-right'} arrow`}></i></h2>
                 <ReactMarkdown style={{ height: iconchangeb ? `${exheightb}px` : '200px'}} className="textarea2">{markdown}</ReactMarkdown>
             </section>
             )}

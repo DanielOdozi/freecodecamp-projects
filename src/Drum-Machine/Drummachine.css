@@ -1,0 +1,58 @@
+.drummachine {
+    background-color: #8d8d8d;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sections {
+    background-color: #b3b3b3;
+    padding: 50px;
+    width: 660px;
+    height: 250px;
+    margin: 0 auto;
+    border-radius: 5px;
+    line-height: 1.3;
+    border-style: solid;
+    border-color: orange;
+    border-width: 5px;
+    display: flex;
+    align-items: center;
+}
+.container1 {
+    display: flex;
+    gap: 13px;
+}
+.container2 {
+    display: flex;
+    gap: 13px;
+    margin-top: 16px;
+}
+.container3 {
+    display: flex;
+    gap: 13px;
+    margin-top: 16px;
+}
+.button-key {
+    display: inline-block;
+    padding: 8px 16px;
+    width: 100px;
+    height: 80px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #808080;
+    border: 1px solid #808080;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    box-shadow: rgb(0, 0, 0) 3px 3px 5px 0px;
+    font-size: 16px;
+}

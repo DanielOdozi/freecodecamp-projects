@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from './Layout';
 import 'animate.css/animate.min.css';
 import Nopage from './Nopage';
+import Drummachine from './Drum-Machine/Drummachine';
 
 
 function Pagetitle() {
@@ -34,6 +35,7 @@ function PageLink(){
                         } />
                     <Route path="Quote" element={<Quote />} />
                     <Route path="Markdown" element={<Markdown />}/>
+                    <Route path="Drummachine" element={<Drummachine />}/>
                     <Route path="*" element={<Nopage />} />
             </Routes>
         </BrowserRouter>

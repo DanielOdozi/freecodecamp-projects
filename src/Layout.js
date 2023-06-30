@@ -12,6 +12,9 @@ function Layout(){
                 <li>
                     <Link to="/Markdown" target={'_blank'} className="quote">Markdown Previewer</Link>
                 </li>
+                <li>
+                    <Link to="/Drummachine" target={'_blank'} className="quote">Drum Machine</Link>
+                </li>
             </ul>
             <Outlet />
         </div>
