@@ -14,7 +14,7 @@
 .sections {
     background-color: #b3b3b3;
     padding: 50px;
-    width: 660px;
+    width: 600px;
     height: 250px;
     margin: 0 auto;
     border-radius: 5px;
@@ -56,3 +56,46 @@
     box-shadow: rgb(0, 0, 0) 3px 3px 5px 0px;
     font-size: 16px;
 }
+.rightside {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #808080;
+    width: 200px;
+    height: 49px;
+}
+.rightside1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+}
+.button-key.clicked1 {
+    background-color: orange;
+}
+.button-key.clicked2 {
+    background-color: orange;
+}
+.button-key.clicked3 {
+    background-color: orange;
+}
+.button-key.clicked4 {
+    background-color: orange;
+}
+.button-key.clicked5 {
+    background-color: orange;
+}
+.button-key.clicked6 {
+    background-color: orange;
+}
+.button-key.clicked7 {
+    background-color: orange;
+}
+.button-key.clicked8 {
+    background-color: orange;
+}
+.button-key.clicked9 {
+    background-color: orange;
+}
+  
