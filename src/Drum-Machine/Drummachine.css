@@ -25,15 +25,8 @@
     display: flex;
     align-items: center;
 }
-.container1 {
-    display: flex;
-    gap: 13px;
-}
-.container2 {
-    display: flex;
-    gap: 13px;
-    margin-top: 16px;
-}
+.container1, 
+.container2, 
 .container3 {
     display: flex;
     gap: 13px;
@@ -49,7 +42,7 @@
     text-align: center;
     text-transform: uppercase;
     background-color: #808080;
-    border: 1px solid #808080;
+    border: 2px solid #808080;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     cursor: pointer;
@@ -58,7 +51,7 @@
 }
 .rightside {
     margin-left: auto;
-    margin-right: auto;
+    margin-right: -20px;
     background-color: #808080;
     width: 200px;
     height: 49px;
@@ -71,31 +64,187 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold;
 }
-.button-key.clicked1 {
-    background-color: orange;
-}
-.button-key.clicked2 {
-    background-color: orange;
-}
-.button-key.clicked3 {
-    background-color: orange;
-}
-.button-key.clicked4 {
-    background-color: orange;
-}
-.button-key.clicked5 {
-    background-color: orange;
-}
-.button-key.clicked6 {
-    background-color: orange;
-}
-.button-key.clicked7 {
-    background-color: orange;
-}
-.button-key.clicked8 {
-    background-color: orange;
-}
+.button-key.clicked1, 
+.button-key.clicked2, 
+.button-key.clicked3, 
+.button-key.clicked4, 
+.button-key.clicked5, 
+.button-key.clicked6, 
+.button-key.clicked7, 
+.button-key.clicked8, 
 .button-key.clicked9 {
     background-color: orange;
 }
+.power {
+    width: 50px;
+    height: 25px;
+    background-color: black;
+    margin-left: auto;
+    margin-right: -110px;
+    border-style: solid;
+}
+.powertxt {
+    margin-left: auto;
+    margin-right: -106px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: -4px;
+}
+.powerbutton {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    flex-direction: column;
+    margin-top: -150px;
+    margin-left: auto;
+    margin-right: -135px;
+}
+.icon {
+    margin-top: 11.9px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+@media screen and (max-width: 600px) {
+    /* Mobile view */
+    .sections {
+        width: 300px;
+        height: 500px;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
   
+    .container1,
+    .container2,
+    .container3 {
+      gap: 10px;
+      margin-top: 20px;
+    }
+  
+    .button-key {
+        width: 70px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+    }
+  
+    .rightside {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: -170px;
+        margin-bottom: 150px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .buttons {
+        margin-bottom: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+        flex: 1;
+        margin-top: -180px;
+    }
+    .power {
+        width: 50px;
+        height: 25px;
+        background-color: black;
+        border-style: solid;
+    }
+    .powertxt {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    .powerbutton {
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        flex-direction: column;
+        margin-bottom: 190px;
+        margin-right: auto;
+        margin-left: 70px;
+    }
+}
+@media screen and (min-width: 600px) and (max-width: 800px) {
+    /* Tablet view */
+    .sections {
+        width: 500px;
+        height: 550px;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+  
+    .container1,
+    .container2,
+    .container3 {
+      gap: 13px;
+      margin-top: 20px;
+    }
+  
+    .button-key {
+        width: 100px;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+    }
+  
+    .rightside {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: -170px;
+        margin-bottom: 150px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .buttons {
+        margin-bottom: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+        flex: 1;
+        margin-top: -170px;
+    }
+    .power {
+        width: 50px;
+        height: 25px;
+        background-color: black;
+        border-style: solid;
+    }
+    .powertxt {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    .powerbutton {
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        flex-direction: column;
+        margin-bottom: 180px;
+        margin-right: auto;
+        margin-left: 170px;
+    }
+}

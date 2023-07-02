@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {useEffect} from 'react';
 import "./Drummachine.css"
+import '@fortawesome/fontawesome-free/css/all.css'
 
 function Drummachine(){
     useEffect(() => {
@@ -126,8 +127,12 @@ function Drummachine(){
                         <button className={`button-key ${button9Clicked ? "clicked9" : "" }`} onClick={() => click("key9")} id='key9'>C</button>
                     </div>
                 </div>
+                <div className='powerbutton'>
+                    <p className='powertxt'>Power</p>
+                    <div className="power"><i className="fa-sharp fa-solid fa-square fa-xl icon" style={{color: '#00d5ff'}}></i></div>
+                </div>
                 <div className="rightside">
-                        <p className='rightside1'>{buttonname}</p>
+                  <p className='rightside1'>{buttonname}</p>
                 </div>
             </section>
         </div>
