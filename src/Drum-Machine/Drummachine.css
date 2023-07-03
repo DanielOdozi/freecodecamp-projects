@@ -51,7 +51,7 @@
 }
 .rightside {
     margin-left: auto;
-    margin-right: -20px;
+    margin-right: -300px;
     background-color: #808080;
     width: 200px;
     height: 49px;
@@ -73,6 +73,9 @@
 .button-key.clicked7, 
 .button-key.clicked8, 
 .button-key.clicked9 {
+    background-color: orange;
+}
+.button-key.active {
     background-color: orange;
 }
 .power {
@@ -98,13 +101,45 @@
     flex-direction: column;
     margin-top: -150px;
     margin-left: auto;
-    margin-right: -135px;
+    margin-right: -150px;
+}
+.powerbutton2 {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    flex-direction: column;
+    margin-top: 0px;
+    margin-right: 150px;
+    margin-bottom: -200px;
+    margin-left: auto;
+}
+.power2 {
+    width: 50px;
+    height: 25px;
+    background-color: black;
+    margin-left: auto;
+    margin-right: -110px;
+    border-style: solid;
+}
+.powertxt2 {
+    margin-left: auto;
+    margin-right: -106px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: -4px;
 }
 .icon {
     margin-top: 11.9px;
     display: flex;
     align-items: center;
     justify-content: right;
+}
+.icon2 {
+    margin-top: 11.9px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
 }
 @media screen and (max-width: 600px) {
     /* Mobile view */
@@ -211,10 +246,9 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        margin-top: -170px;
-        margin-bottom: 150px;
         margin-left: auto;
         margin-right: auto;
+        margin-bottom: 80px;
     }
     .buttons {
         margin-bottom: auto;
@@ -225,7 +259,7 @@
         margin-left: auto;
         margin-right: auto;
         flex: 1;
-        margin-top: -170px;
+        margin-top: -180px;
     }
     .power {
         width: 50px;
@@ -243,8 +277,39 @@
         align-items: center;
         justify-content: right;
         flex-direction: column;
-        margin-bottom: 180px;
+        margin-bottom: 5px;
         margin-right: auto;
         margin-left: 170px;
+    }
+    .powerbutton2 {
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        flex-direction: column;
+        margin-bottom: 20px;
+        margin-right: auto;
+        margin-left: 170px;
+    }
+    .power2 {
+        width: 50px;
+        height: 25px;
+        background-color: black;
+        margin-left: auto;
+        margin-right: -110px;
+        border-style: solid;
+    }
+    .powertxt2 {
+        margin-left: auto;
+        margin-right: -106px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: bold;
+        font-size: 18px;
+        margin-bottom: -4px;
+    }
+    .icon2 {
+        margin-top: 11.9px;
+        display: flex;
+        align-items: center;
+        justify-content: left;
     }
 }

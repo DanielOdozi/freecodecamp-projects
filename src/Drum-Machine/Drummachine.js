@@ -2,17 +2,42 @@ import React, { useState } from 'react';
 import {useEffect} from 'react';
 import "./Drummachine.css"
 import '@fortawesome/fontawesome-free/css/all.css'
+import audioFIle from './audio/Heater-1.mp3'
 
 function Drummachine(){
     useEffect(() => {
         document.title = 'Drum-Machine';
       }, []);
       //button Names Heater
+      const [audios] = useState(new Audio(audioFIle));
+      const [isButtonActive, setIsButtonActive] = useState(false);
+      const playAudio = () => {
+        audios.play();
+      };
+      useEffect(() => {
+        const handleKeyPress = (event) => {
+          if (event.key === 'q') {
+            playAudio();
+          }
+        };
+        const handleKeyUp = (event) => {
+          if (event.key === 'q') {
+            setIsButtonActive(false);
+          }
+        };
+        window.addEventListener('keydown', handleKeyPress);
+        window.addEventListener('keyup', handleKeyUp);
+        return () => {
+          window.removeEventListener('keydown', handleKeyPress);
+          window.removeEventListener('keyup', handleKeyUp);
+        };
+      });
       const [buttonname, setbuttonname] = useState("Heater Kit");
       const click = (id) => {
         if (id === 'key1'){
             setbuttonname('Heater 1')
             handleClickButton1();
+            playAudio();
         }else if (id === 'key2') {
             setbuttonname('Heater 2')
             handleClickButton2();
@@ -112,7 +137,7 @@ function Drummachine(){
             <section className='sections'>
                 <div className='buttons'>
                     <div className='container1'>
-                        <button  className={`button-key ${button1Clicked ? "clicked1" : "" }`} onClick={() => click("key1")} id='key1'>Q</button>
+                        <button  className={`button-key ${button1Clicked ? "clicked1" : ""}  ${isButtonActive ? 'active' : ''}`} onClick={() => click("key1")} id='key1'>Q</button>
                         <button className={`button-key ${button2Clicked ? "clicked2" : "" }`} onClick={() => click("key2")} id='key2'>W</button>
                         <button className={`button-key ${button3Clicked ? "clicked3" : "" }`} onClick={() => click("key3")} id='key3'>E</button>
                     </div>
@@ -133,6 +158,10 @@ function Drummachine(){
                 </div>
                 <div className="rightside">
                   <p className='rightside1'>{buttonname}</p>
+                </div>
+                <div className='powerbutton2'>
+                    <p className='powertxt2'>Bank</p>
+                    <div className="power2"><i className="fa-sharp fa-solid fa-square fa-xl icon2" style={{color: '#00d5ff'}}></i></div>
                 </div>
             </section>
         </div>
