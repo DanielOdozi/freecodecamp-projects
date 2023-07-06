@@ -7,6 +7,7 @@ import Layout from './Layout';
 import 'animate.css/animate.min.css';
 import Nopage from './Nopage';
 import Drummachine from './Drum-Machine/Drummachine';
+import Calculator from './JavaScript-Calculator/Calculator'
 
 
 function Pagetitle() {
@@ -36,6 +37,7 @@ function PageLink(){
                     <Route path="Quote" element={<Quote />} />
                     <Route path="Markdown" element={<Markdown />}/>
                     <Route path="Drummachine" element={<Drummachine />}/>
+                    <Route path="Calculator" element={<Calculator />}/>
                     <Route path="*" element={<Nopage />} />
             </Routes>
         </BrowserRouter>

@@ -9,7 +9,6 @@
     justify-content: center;
     transition: background-color 1s;
 }
-  
 .fade-background.fadeOut {
     animation: fadeOut 1s forwards;
 }

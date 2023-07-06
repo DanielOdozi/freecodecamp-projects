@@ -15,6 +15,9 @@ function Layout(){
                 <li>
                     <Link to="/Drummachine" target={'_blank'} className="quote">Drum Machine</Link>
                 </li>
+                <li>
+                    <Link to="/Calculator" target={'_blank'} className="quote">JavaScript Calculator</Link>
+                </li>
             </ul>
             <Outlet />
         </div>

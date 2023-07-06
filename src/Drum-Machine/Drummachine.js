@@ -29,6 +29,7 @@ function Drummachine(){
       const [isButtonActive, setIsButtonActive] = useState(false);
       const playAudio = () => {
         audios.play();
+        audios.playbackRate = 1
       };
       useEffect(() => {
         const handleKeyPress = (event) => {
