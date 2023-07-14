@@ -11,11 +11,13 @@ function Clock(){
     const increment = () => {
         if (incre < 60){
             setincre(incre + 1)
+            setBreak(breakstate + 60)
         }
     }
     const decrement = () => {
         if (incre > 1){
             setincre(incre - 1)
+            setBreak(breakstate - 60)
         }
     }
     const [session, setsession] = useState(25);
@@ -35,11 +37,12 @@ function Clock(){
         setsession(25)
         setincre(5)
         setCount(1500)
+        setText(<h1 className='countdownfont'>Session</h1>)
     }
     //Countdown timer
+    const [text, setText] = useState(<h1 className='countdownfont'>Session</h1>)
     const [count, setCount] = useState(1500);
-    const [breakstate, setBreak] = useState(false);
-    const breakDuration = 300;
+    const [breakstate, setBreak] = useState(300);
     const [isStarted, setIsStarted] = useState(false);
     useEffect(() => {
         // Decrease count every second
@@ -51,13 +54,14 @@ function Clock(){
         }
         if (count === 0) {
             clearInterval(timer);
-            setCount(breakDuration)
+            setCount(breakstate);
+            setText(<h1 className='countdownfont' style={{color: 'red'}}>Break</h1>)
         }
       
         return () => {
             clearInterval(timer);
         };
-    }, [count, isStarted, breakstate, breakDuration]);
+    }, [count, isStarted, breakstate]);
     const formatTime = () => {
         const minutes = Math.floor(count / 60);
         const seconds = count % 60;
@@ -66,6 +70,7 @@ function Clock(){
     const startCountdown = () => {
             setIsStarted(prevState => !prevState);
     };
+    const textColor = breakstate ? 'white' : 'red';
     return(
         <div className="mainclass">
             <section className='mainsec'>
@@ -89,8 +94,8 @@ function Clock(){
                     </div>
                 </section>
                 <div className='countdown'>
-                    <h1 className='countdownfont'>Session</h1>
-                    <h1 className='countdownnum'>{formatTime()}</h1>
+                    <h1 className='countdownfont'>{text}</h1>
+                    <h1 className='countdownnum' style={{color: textColor}}>{formatTime()}</h1>
                 </div>
                 <div className='playpause'>
                     <a href='#/'><i onClick={startCountdown} className="fa-solid fa-play fa-2xl" style={{color: '#ffffff'}}></i><i onClick={startCountdown} className="fa-solid fa-pause fa-2xl" style={{color: '#ffffff'}}></i></a>
