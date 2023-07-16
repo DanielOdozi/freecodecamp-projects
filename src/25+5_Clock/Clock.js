@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import "./Clock.css"
 import '@fortawesome/fontawesome-free/css/all.css'
+import audioAlarm from './audio/alarm-clock-short-6402.mp3'
 
 function Clock(){
     useEffect(() => {
@@ -33,18 +34,25 @@ function Clock(){
             setCount(count - 60)
         }
     }
+    //Reset everything
     const Reset = () => {
         setsession(25)
         setincre(5)
         setCount(1500)
         setText(<h1 className='countdownfont'>Session</h1>)
+        setIsStarted(false)
     }
     //Countdown timer
     const [text, setText] = useState(<h1 className='countdownfont'>Session</h1>)
     const [count, setCount] = useState(1500);
     const [breakstate, setBreak] = useState(300);
     const [isStarted, setIsStarted] = useState(false);
+    //audio
+    const [audio] = useState(new Audio(audioAlarm));
     useEffect(() => {
+        const PlayAudio = () => {
+            audio.play()
+        }
         // Decrease count every second
         let timer;
         if (isStarted) {
@@ -52,21 +60,24 @@ function Clock(){
                 setCount(prevCount => prevCount - 1);
             }, 1000);
         }
+        //When the count reaches 0
         if (count === 0) {
             clearInterval(timer);
+            PlayAudio()
             setCount(breakstate);
-            setText(<h1 className='countdownfont' style={{color: 'red'}}>Break</h1>)
+            setText(<h1 className='countdownfont' style={{color: '#a50d0d'}}>Break</h1>)
         }
-      
         return () => {
             clearInterval(timer);
         };
-    }, [count, isStarted, breakstate]);
+    }, [count, isStarted, breakstate, audio]);
+    //Convert seconds to minutes
     const formatTime = () => {
         const minutes = Math.floor(count / 60);
         const seconds = count % 60;
         return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
     };
+    //Start and pause
     const startCountdown = () => {
             setIsStarted(prevState => !prevState);
     };
