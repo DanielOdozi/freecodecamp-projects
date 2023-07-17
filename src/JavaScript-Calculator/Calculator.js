@@ -7,40 +7,36 @@ function Calculator(){
         document.title = 'Calculator';
       }, []);
       
-      const [numbers, setnumbers] = useState([])
-      const handleclicknum = () => {
-        const num = 1
-        setnumbers(prevNumbers => [num, ...prevNumbers])
+      const [numbers, setnumbers] = useState('0')
+      const handleclicknum = (input) => {
+        setnumbers((prevNumber) => (prevNumber === "0" ? input : prevNumber + input))
       }
       const reset = () => {
-        setnumbers(0)
+        setnumbers('0')
       }
     return(
         <div className='maincontainer'>
-            <div className='container'>
-                {numbers.map((number, index) => (
-                    <p className='display' key={index}>{number}</p>
-                ))}
-                <section className='sec1'>
-                    <button className='buttonac' onClick={reset}>AC</button>
-                    <button className='buttonnumbersdivide'>/</button>
-                </section>
+            <div className='calculator'>
                 <section className='sec'>
-                    <button className='buttonnumbers'>7</button>
-                    <button className='buttonnumbers'>8</button>
-                    <button className='buttonnumbers'>9</button>
-                    <button className='buttonplus'>x</button>
-                    <button className='buttonnumbers'>4</button>
-                    <button className='buttonnumbers'>5</button>
-                    <button className='buttonnumbers'>6</button>
-                    <button className='buttonplus'>-</button>
-                    <button className='buttonnumbers' onClick={handleclicknum}>1</button>
-                    <button className='buttonnumbers'>2</button>
-                    <button className='buttonnumbers'>3</button>
-                    <button className='buttonplus'>+</button>
-                    <button className='button0'>0</button>
-                    <button className='buttondot'>.</button>
-                    <button className='buttonequal'>=</button>
+                    <p className='formulaScreen'>{numbers}</p>
+                    <p className='outputScreen'>{numbers}</p>
+                    <button className='buttoncal ac' onClick={reset}>AC</button>
+                    <button className='buttoncal symbols'>/</button>
+                    <button className='buttoncal symbols'>x</button>
+                    <button className='buttoncal' onClick={() => handleclicknum('7')}>7</button>
+                    <button className='buttoncal' onClick={() => handleclicknum('8')}>8</button>
+                    <button className='buttoncal' onClick={() => handleclicknum('9')}>9</button>
+                    <button className='buttoncal symbols'>-</button>
+                    <button className='buttoncal' onClick={() => handleclicknum('4')}>4</button>
+                    <button className='buttoncal'  onClick={() => handleclicknum('5')}>5</button>
+                    <button className='buttoncal' onClick={() => handleclicknum('6')}>6</button>
+                    <button className='buttoncal symbols'>+</button>
+                    <button className='buttoncal' onClick={() => handleclicknum('1')}>1</button>
+                    <button className='buttoncal' onClick={() => handleclicknum('2')}>2</button>
+                    <button className='buttoncal' onClick={() => handleclicknum('3')}>3</button>
+                    <button className='buttoncal button0' onClick={() => handleclicknum('0')}>0</button>
+                    <button className='buttoncal' onClick={() => handleclicknum('.')}>.</button>
+                    <button className='buttoncal buttonequal'>=</button>
                 </section>
             </div>
         </div>
