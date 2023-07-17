@@ -3,7 +3,9 @@ import "./Clock.css"
 import '@fortawesome/fontawesome-free/css/all.css'
 import audioAlarm from './audio/alarm-clock-short-6402.mp3'
 
+
 function Clock(){
+    //Page title
     useEffect(() => {
         document.title = 'Clock';
       }, []);
